@@ -6,6 +6,8 @@ import ErrorMessage from './components/ErrorMessage.jsx';
 import Loading from './components/Loading.jsx';
 import EndMessage from './components/EndMessage.jsx';
 
+const token = import.meta.env.VITE_GITHUB_TOKEN;
+
 function App() {
   const [username, setUsername] = useState('');
   const [repos, setRepos] = useState([]);
@@ -13,9 +15,6 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [hasMore, setHasMore] = useState(true);
-
-  const token = import.meta.env.VITE_GITHUB_TOKEN;
-
   const [debouncedUsername, setDebouncedUsername] = useState('');
 
   useEffect(() => {
